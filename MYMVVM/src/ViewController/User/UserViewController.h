@@ -6,11 +6,11 @@
 //  Copyright © 2020 陈宝祥. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "MainTabBaseVC.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UserViewController : UIViewController
+@interface UserViewController : MainTabBaseVC
 
 @end
 

@@ -30,15 +30,25 @@
 - (void)setupViewControllers {
 
     HomeViewController *homeVC = [[HomeViewController alloc] init];
-    
+    homeVC.title = @"首页";
     UINavigationController *homeNav = [[UINavigationController alloc]
                                    initWithRootViewController:homeVC];
-    
+    homeNav.navigationBar.translucent = NO;
+    homeNav.navigationBar.shadowImage = [[UIImage alloc] init];
+    [homeNav.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
+    [homeNav.navigationBar setTintColor:[UIColor grayColor]];
+    [homeNav.navigationBar setBarTintColor:[UIColor whiteColor]];
+    [homeNav.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor blackColor]}];
     
     UserViewController *userVC  = [[UserViewController alloc] init];
     UINavigationController *userNav = [[UINavigationController alloc]
                                  initWithRootViewController:userVC];
-//    userNav.navigationController.navigationBar.hidden = YES;
+    userNav.navigationBar.translucent = NO;
+    userNav.navigationBar.shadowImage = [[UIImage alloc] init];
+    [userNav.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
+    [userNav.navigationBar setTintColor:[UIColor grayColor]];
+    [userNav.navigationBar setBarTintColor:[UIColor whiteColor]];
+    [userNav.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor blackColor]}];
     [self customizeTabBarForController:self];
     [self setViewControllers:@[homeNav,userNav]];
 //    self.tabBar.backgroundColor = TabBarBgColor;

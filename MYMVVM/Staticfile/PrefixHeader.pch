@@ -32,4 +32,5 @@
 #import "CBXSegmented.h"                // 滑动选择器
 #import "AlertToolViewController.h"     // 选择框
 #import "Toast.h"                       // 弹窗
+#import "MBProgressHUD+MJ.h"            // 加载轮
 #endif /* PrefixHeader_pch */
