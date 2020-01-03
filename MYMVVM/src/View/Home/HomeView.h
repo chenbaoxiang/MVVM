@@ -11,7 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HomeView : UIView
-
+@property(nonatomic,strong)UITableView *tableView;
+@property(nonatomic,strong)UIImageView *topImageView;
 @end
 
 NS_ASSUME_NONNULL_END

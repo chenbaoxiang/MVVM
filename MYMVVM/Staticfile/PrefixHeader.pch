@@ -26,7 +26,7 @@
 
 //------------  Service   ------------
 #import "Manager.h"                     // 单例
-#import "CBXSegmented.h"                // 网络请求
+#import "CBXNetworking.h"                // 网络请求
 //------------  Tools   ------------
 #import "MainTabBarController.h"        // tabBar
 #import "CBXSegmented.h"                // 滑动选择器

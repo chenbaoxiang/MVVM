@@ -996,7 +996,7 @@ static inline NSString *cachePath() {
     NSString* errResponse = [[NSString alloc] initWithData:(NSData *)error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] encoding:NSUTF8StringEncoding];
            // json字符串转字典
     NSDictionary *json = [Manager dictionaryWithJsonString:errResponse];
-    NSLog(@"error->%@",json);
+    NSLog(@"error->%@,error---%@",json,error);
   if ([error code] == NSURLErrorCancelled) {
      
     if (sg_shouldCallbackOnCancelRequest) {

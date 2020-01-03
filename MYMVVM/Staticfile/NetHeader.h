@@ -16,7 +16,8 @@
 // 登录
 #define kLoginURL          @"Login/login"
 #define kSendCode          @"Login/Login/sendSmsVerificationCode"
-
+// 广告
+#define kGetAdvertisement          @"Login/Advertisement/getAdvertisement"
 // ------------------ 首页 --------------------
 // 服务列表
 #define kServerList(type,page,limit)              [NSString stringWithFormat:@"Client/Server/getList?type=%@&page=%d&limit=%d",(type),(page),(limit)]

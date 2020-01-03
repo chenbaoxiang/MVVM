@@ -49,6 +49,8 @@
 		606AA16223BF1D99003D59EC /* MBCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 606AA15C23BF1D99003D59EC /* MBCustomView.m */; };
 		606AA16323BF1D99003D59EC /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 606AA15E23BF1D99003D59EC /* MBProgressHUD+MJ.m */; };
 		606AA16423BF1D99003D59EC /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 606AA15F23BF1D99003D59EC /* MBProgressHUD.bundle */; };
+		606AA16623BF2448003D59EC /* StaticData.json in Resources */ = {isa = PBXBuildFile; fileRef = 606AA16523BF2448003D59EC /* StaticData.json */; };
+		606AA16923BF3F59003D59EC /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 606AA16823BF3F59003D59EC /* HomeTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,6 +157,9 @@
 		606AA15E23BF1D99003D59EC /* MBProgressHUD+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MJ.m"; sourceTree = "<group>"; };
 		606AA15F23BF1D99003D59EC /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
 		606AA16023BF1D99003D59EC /* MBCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBCustomView.h; sourceTree = "<group>"; };
+		606AA16523BF2448003D59EC /* StaticData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StaticData.json; sourceTree = "<group>"; };
+		606AA16723BF3F59003D59EC /* HomeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
+		606AA16823BF3F59003D59EC /* HomeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
 		9392D2D8737BB32E672C109F /* Pods-MYMVVM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MYMVVM.debug.xcconfig"; path = "Target Support Files/Pods-MYMVVM/Pods-MYMVVM.debug.xcconfig"; sourceTree = "<group>"; };
 		B7185EF2280F3B32393B7AEA /* Pods_MYMVVM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MYMVVM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5B50044E1F5F64398C58F95 /* Pods-MYMVVM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MYMVVM.release.xcconfig"; path = "Target Support Files/Pods-MYMVVM/Pods-MYMVVM.release.xcconfig"; sourceTree = "<group>"; };
@@ -316,6 +321,8 @@
 			children = (
 				6030D42C23BDC22700225F37 /* HomeView.h */,
 				6030D42D23BDC22700225F37 /* HomeView.m */,
+				606AA16723BF3F59003D59EC /* HomeTableViewCell.h */,
+				606AA16823BF3F59003D59EC /* HomeTableViewCell.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -371,6 +378,7 @@
 		606AA10623BF06D9003D59EC /* Staticfile */ = {
 			isa = PBXGroup;
 			children = (
+				606AA16523BF2448003D59EC /* StaticData.json */,
 				606AA12F23BF075D003D59EC /* PrefixHeader.pch */,
 				606AA14823BF0FBC003D59EC /* NetHeader.h */,
 				606AA14E23BF12B1003D59EC /* KeyValue.h */,
@@ -637,6 +645,7 @@
 				6030D3F523BDBA1800225F37 /* LaunchScreen.storyboard in Resources */,
 				606AA16423BF1D99003D59EC /* MBProgressHUD.bundle in Resources */,
 				6030D3F223BDBA1800225F37 /* Assets.xcassets in Resources */,
+				606AA16623BF2448003D59EC /* StaticData.json in Resources */,
 				6030D3F023BDBA1700225F37 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -718,6 +727,7 @@
 				606AA16323BF1D99003D59EC /* MBProgressHUD+MJ.m in Sources */,
 				6030D43723BDC33F00225F37 /* UserViewModel.m in Sources */,
 				606AA12E23BF072A003D59EC /* UIResponder+Router.m in Sources */,
+				606AA16923BF3F59003D59EC /* HomeTableViewCell.m in Sources */,
 				6030D42E23BDC22700225F37 /* HomeView.m in Sources */,
 				606AA14C23BF0FBC003D59EC /* Manager.m in Sources */,
 				606AA15223BF1C40003D59EC /* MainTabBaseVC.m in Sources */,

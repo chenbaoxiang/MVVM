@@ -34,7 +34,7 @@
     [self.topView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(0);
         make.top.mas_equalTo(weakSelf.view.mas_safeAreaLayoutGuideTop);
-        make.bottom.mas_equalTo(weakSelf.view.mas_safeAreaLayoutGuideBottom).offset(-10);
+        make.bottom.mas_equalTo(weakSelf.view.mas_safeAreaLayoutGuideBottom);
     }];
     
 }

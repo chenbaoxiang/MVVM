@@ -26,7 +26,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
+-(void)showHUDAnimation
+{
+    [MBProgressHUD showMessage:@"加载中" toView:self.view];
+    [self performSelector:@selector(stopHUDAnimation) withObject:nil afterDelay:15];
+}
 
+-(void)stopHUDAnimation{
+    [MBProgressHUD hideHUDForView:self.view];
+}
 /*
 #pragma mark - Navigation
 
