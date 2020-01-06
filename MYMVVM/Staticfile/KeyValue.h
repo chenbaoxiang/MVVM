@@ -26,10 +26,12 @@
 
 #define kMainColor RGBA(14, 203, 110, 1)
 #define kMainColorLayer RGBA(14, 203, 110, 0.1)
+#define kLineColor RGBA(230, 230, 230, 1)
 #define k102Color RGBA(102, 102, 102, 1)
 #define k51Color RGBA(51, 51, 51, 1)
 #define k153Color RGBA(153, 153, 153, 1)
-#define k247Color RGBA(247, 247, 247, 1)
+#define k241Color RGBA(241, 241, 241, 1)
+
 #define kShadowColor RGBA(153, 153, 153, 0.3).CGColor
 #define CombStr(str1,str2)           [str1 stringByAppendingString:str2]
 #define kFontSize(size) [UIFont systemFontOfSize:(size)]

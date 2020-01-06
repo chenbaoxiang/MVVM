@@ -110,7 +110,7 @@
 #pragma mark Getter
 
 -(NSArray *)getTitles{
-    NSArray * titles = @[@"首页",@"我的"];
+    NSArray * titles = @[@"列表",@"调试"];
     return titles;
 }
 

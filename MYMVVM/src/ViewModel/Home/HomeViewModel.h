@@ -10,14 +10,15 @@
 #import "HomeModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HomeViewModel : NSObject<UITableViewDelegate, UITableViewDataSource>
+@interface HomeViewModel : NSObject
 @property (nonatomic, strong) NSArray *dataSourceArr;
-// 点击cell回调
-@property (nonatomic, strong) void(^callBlock)(HomeModel *homeModel);
+@property(nonatomic,strong)NSMutableArray *sdcArrey;
+@property(nonatomic,strong)NSString *showImageStr;
 
-
-// 请求数据
+// 首页列表数据
 - (void)requestDataSuccess:(void(^)(void))successBlock faildBlock:(void(^)(void))faildBlock;
+// 轮播图
+- (void)requestSDCSuccess:(void(^)(void))successBlock faildBlock:(void(^)(void))faildBlock;
 @end
 
 NS_ASSUME_NONNULL_END

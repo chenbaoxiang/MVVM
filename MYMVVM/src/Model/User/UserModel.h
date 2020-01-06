@@ -11,7 +11,12 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UserModel : NSObject
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *headerImage;
+@property (nonatomic, copy) NSString *time;
 
+
+@property (nonatomic, assign) long sub_number;
 @end
 
 NS_ASSUME_NONNULL_END

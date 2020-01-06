@@ -7,11 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "UserModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UserViewModel : NSObject
-
+@property (nonatomic, strong) NSArray *dataSourceArr;
+@property (nonatomic, strong) NSString *labStr;
+// 请求数据
+- (void)requestDataSuccess:(void(^)(void))successBlock faildBlock:(void(^)(void))faildBlock;
 @end
 
 NS_ASSUME_NONNULL_END
