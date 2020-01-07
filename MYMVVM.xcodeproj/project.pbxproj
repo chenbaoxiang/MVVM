@@ -121,6 +121,7 @@
 		606AA24223C3039C003D59EC /* ShowImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 606AA24123C3039C003D59EC /* ShowImageVC.m */; };
 		606AA24623C309DC003D59EC /* ShadowVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 606AA24523C309DC003D59EC /* ShadowVC.m */; };
 		606AA24A23C31AD9003D59EC /* SendCodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 606AA24923C31AD9003D59EC /* SendCodeVC.m */; };
+		606AA24E23C3330B003D59EC /* HomeDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 606AA24D23C3330B003D59EC /* HomeDetailVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -353,6 +354,8 @@
 		606AA24523C309DC003D59EC /* ShadowVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShadowVC.m; sourceTree = "<group>"; };
 		606AA24823C31AD9003D59EC /* SendCodeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SendCodeVC.h; sourceTree = "<group>"; };
 		606AA24923C31AD9003D59EC /* SendCodeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SendCodeVC.m; sourceTree = "<group>"; };
+		606AA24C23C3330B003D59EC /* HomeDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeDetailVC.h; sourceTree = "<group>"; };
+		606AA24D23C3330B003D59EC /* HomeDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeDetailVC.m; sourceTree = "<group>"; };
 		9392D2D8737BB32E672C109F /* Pods-MYMVVM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MYMVVM.debug.xcconfig"; path = "Target Support Files/Pods-MYMVVM/Pods-MYMVVM.debug.xcconfig"; sourceTree = "<group>"; };
 		B7185EF2280F3B32393B7AEA /* Pods_MYMVVM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MYMVVM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5B50044E1F5F64398C58F95 /* Pods-MYMVVM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MYMVVM.release.xcconfig"; path = "Target Support Files/Pods-MYMVVM/Pods-MYMVVM.release.xcconfig"; sourceTree = "<group>"; };
@@ -485,6 +488,7 @@
 		6030D41E23BDC1A000225F37 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				606AA24B23C332F0003D59EC /* HomeDetailVC */,
 				606AA24723C31ABC003D59EC /* SendCodeVC */,
 				606AA24323C30990003D59EC /* ShadowVC */,
 				606AA23F23C30386003D59EC /* ShowImageVC */,
@@ -1012,6 +1016,15 @@
 			path = SendCodeVC;
 			sourceTree = "<group>";
 		};
+		606AA24B23C332F0003D59EC /* HomeDetailVC */ = {
+			isa = PBXGroup;
+			children = (
+				606AA24C23C3330B003D59EC /* HomeDetailVC.h */,
+				606AA24D23C3330B003D59EC /* HomeDetailVC.m */,
+			);
+			path = HomeDetailVC;
+			sourceTree = "<group>";
+		};
 		C2D648A34767D6BF53C1FF4C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1295,6 +1308,7 @@
 				606AA17D23C2E1B4003D59EC /* SDCycleScrollView.m in Sources */,
 				606AA15823BF1C5A003D59EC /* BaseView.m in Sources */,
 				606AA24A23C31AD9003D59EC /* SendCodeVC.m in Sources */,
+				606AA24E23C3330B003D59EC /* HomeDetailVC.m in Sources */,
 				606AA24223C3039C003D59EC /* ShowImageVC.m in Sources */,
 				606AA21723C2FCFC003D59EC /* LGPhotoPickerBrowserPhotoScrollView.m in Sources */,
 				606AA21423C2FCFC003D59EC /* LGPhotoRect.m in Sources */,

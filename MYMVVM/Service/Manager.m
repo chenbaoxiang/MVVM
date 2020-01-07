@@ -177,5 +177,113 @@ static Manager *manager = nil;
     return phoneType;
     
 }
++(NSString *)hanleNums:(NSString *)numbers{
+    NSString *str = [numbers substringWithRange:NSMakeRange(numbers.length%3, numbers.length-numbers.length%3)];
+    NSString *strs = [numbers substringWithRange:NSMakeRange(0, numbers.length%3)];
+    for (int  i =0; i < str.length; i =i+3) {
+        NSString *sss = [str substringWithRange:NSMakeRange(i, 3)];
+        strs = [strs stringByAppendingString:[NSString stringWithFormat:@",%@",sss]];
+    }
+    if ([[strs substringWithRange:NSMakeRange(0, 1)] isEqualToString:@","]) {
+        strs = [strs substringWithRange:NSMakeRange(1, strs.length-1)];
+    }
+    return strs;
+}
++(NSString *)getNetWorkStates{
+    UIApplication *app = [UIApplication sharedApplication];
+    NSArray *children = [[[app valueForKeyPath:@"statusBar"]valueForKeyPath:@"foregroundView"]subviews];
+    NSString *state = [[NSString alloc]init];
+    int netType = 0;
+    //获取到网络返回码
+    for (id child in children) {
+        if ([child isKindOfClass:NSClassFromString(@"UIStatusBarDataNetworkItemView")]) {
+            //获取到状态栏
+            netType = [[child valueForKeyPath:@"dataNetworkType"]intValue];
+            
+            switch (netType) {
+                case 0:
+                    state = @"无网络";
+                    //无网模式
+                    break;
+                case 1:
+                    state = @"2G";
+                    break;
+                case 2:
+                    state = @"3G";
+                    break;
+                case 3:
+                    state = @"4G";
+                    break;
+                case 5:
+                {
+                    state = @"Wifi";
+                }
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+    //根据状态选择
+    return state;
+}
++ (NSString*)dictionaryToJson:(NSDictionary *)dic{
+    NSError *parseError = nil;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:&parseError];
+    return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+}
++ (NSString *)uuidString{
+    CFUUIDRef uuid_ref = CFUUIDCreate(NULL);
+    CFStringRef uuid_string_ref= CFUUIDCreateString(NULL, uuid_ref);
+    NSString *uuid = [NSString stringWithString:(__bridge NSString *)uuid_string_ref];
+    CFRelease(uuid_ref);
+    CFRelease(uuid_string_ref);
+    return [uuid lowercaseString];
+}
++(NSString *)removeSpaceAndNewline:(NSString *)str{
+    NSString *temp = [str stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    NSString *text = [temp stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet ]];
+    return text;
+}
++(BOOL)checkEmail:(NSString *)email{
+    NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+    if( [emailTest evaluateWithObject:email]){
+        
+        NSLog(@"恭喜！您输入的邮箱验证合法");
+        return YES;
+        
+    }else{
+        
+        
+        return NO;
+    }
+    return NO;
+}
++(NSDateComponents *)GetCurrentDate{
+    NSCalendar *gregorian = [[NSCalendar alloc]
+                             initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    // 获取当前日期
+    NSDate* dt = [NSDate date];
+    // 定义一个时间字段的旗标，指定将会获取指定年、月、日、时、分、秒的信息
+    unsigned unitFlags = NSCalendarUnitYear |
+    NSCalendarUnitMonth |  NSCalendarUnitDay |
+    NSCalendarUnitHour |  NSCalendarUnitMinute |
+    NSCalendarUnitSecond | NSCalendarUnitWeekday;
+    // 获取不同时间字段的信息
+    NSDateComponents* comp = [gregorian components: unitFlags fromDate:dt];
+    // 获取各时间字段的数值
+    /*
+    NSLog(@"现在是%ld年" , comp.year);
+    NSLog(@"现在是%ld月 " , comp.month);
+    NSLog(@"现在是%ld日" , comp.day);
+    NSLog(@"现在是%ld时" , comp.hour);
+    NSLog(@"现在是%ld分" , comp.minute);
+    NSLog(@"现在是%ld秒" , comp.second);
+    NSLog(@"现在是星期%ld" , comp.weekday);
+     */
+    return comp;
+}
+
 
 @end
