@@ -17,7 +17,7 @@ static Manager *manager = nil;
     }
     return manager;
 }
-#pragma mark ---- 判断手机号正则
+
 +(BOOL)isPhoneNum:(NSString*)phoneStr{
     NSError *error = NULL;
       NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"^(((13[0-9])|(14[579])|(15([0-3]|[5-9]))|(16[6])|(17[0135678])|(18[0-9])|(19[89]))\\d{8})$" options:NSRegularExpressionCaseInsensitive error:&error];
@@ -27,7 +27,7 @@ static Manager *manager = nil;
       }
       return NO;
 }
-#pragma mark ---- 计算html字符串高度
+
 +(CGFloat)returnHtmlHeight:(NSString*)str font:(UIFont*)font{
     //计算html字符串高度
     NSMutableAttributedString *htmlString =[[NSMutableAttributedString alloc] initWithData:[str dataUsingEncoding:NSUTF8StringEncoding] options:@{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType, NSCharacterEncodingDocumentAttribute:[NSNumber numberWithInt:NSUTF8StringEncoding]} documentAttributes:NULL error:nil];
@@ -38,7 +38,7 @@ static Manager *manager = nil;
      
     return textSize.height ;
 }
-#pragma mark ---- 将时间戳转换成时间
+
 
 +(NSString *)getTimeFromTimestamp:(double)time{
     //将对象类型的时间转换为NSDate类型
@@ -51,7 +51,7 @@ static Manager *manager = nil;
     return timeStr;
 }
 
-#pragma mark -- json格式字符串转字典：
+
 + (NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString {
     if (jsonString == nil) {
         return nil;
@@ -66,14 +66,14 @@ static Manager *manager = nil;
     return dic;
 
 }
-#pragma mark -- 切圆角
+
 +(void)setPartRoundWithView:(UIView *)view rect:(CGRect)rect corners:(UIRectCorner)corners cornerRadius:(float)cornerRadius {
     CAShapeLayer *shapeLayer = [CAShapeLayer layer];
     shapeLayer.path = [UIBezierPath bezierPathWithRoundedRect:rect byRoundingCorners:corners cornerRadii:CGSizeMake(cornerRadius, cornerRadius)].CGPath;
     view.layer.mask = shapeLayer;
 }
 
-#pragma mark -- 呼吸灯
+
 +(CABasicAnimation *) AlphaLight:(float)time
 {
     CABasicAnimation *animation =[CABasicAnimation animationWithKeyPath:@"opacity"];
@@ -89,7 +89,7 @@ static Manager *manager = nil;
     
     return animation;
 }
-#pragma mark -- 请求本地数据
+
 +(NSDictionary *)locationDataWithSourceName:(NSString *)sourceName{
    NSString *path = [[NSBundle mainBundle] pathForResource:sourceName ofType:@"json"];
     // 将文件数据化
@@ -97,7 +97,7 @@ static Manager *manager = nil;
     // 对数据进行JSON格式化并返回字典形式
     return [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
 }
-#pragma mark -- 判断手机型号
+
 +(NSString*)judgeIphoneType {
     
     struct utsname systemInfo;
@@ -285,5 +285,45 @@ static Manager *manager = nil;
     return comp;
 }
 
++(void)shadowView:(UIView*)view color:(UIColor *)color{
+    view.layer.cornerRadius = 10;
+    view.layer.shadowOffset = CGSizeMake(1, 1);
+    view.layer.shadowColor = color.CGColor;
+    view.layer.shadowOpacity = 1;
+    view.layer.shadowRadius = 3;
+}
+// 验证码按钮倒计时
++(void)sendCodeShowBtn:(UIButton *)btn{
+    __block NSInteger time = 59; //倒计时时间
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_source_t _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
+    dispatch_source_set_timer(_timer,dispatch_walltime(NULL, 0),1.0*NSEC_PER_SEC, 0); //每秒执行
+    dispatch_source_set_event_handler(_timer, ^{
+        if(time <= 0){ //倒计时结束，关闭
+            
+            dispatch_source_cancel(_timer);
+            dispatch_async(dispatch_get_main_queue(), ^{
+
+                //设置按钮的样式
+                [btn setTitle:@"重新发送" forState:UIControlStateNormal];
+                [btn setTitleColor:kMainColor forState:UIControlStateNormal];
+                btn.userInteractionEnabled = YES;
+            });
+
+        }else{
+            
+            int seconds = time % 60;
+            dispatch_async(dispatch_get_main_queue(), ^{
+
+                //设置按钮显示读秒效果
+                [btn setTitle:[NSString stringWithFormat:@"%d秒 重新发送", seconds] forState:UIControlStateNormal];
+                [btn setTitleColor:k153Color forState:UIControlStateNormal];
+                btn.userInteractionEnabled = NO;
+            });
+            time--;
+        }
+    });
+    dispatch_resume(_timer);
+}
 
 @end

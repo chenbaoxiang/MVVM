@@ -30,11 +30,7 @@
     
     self.view1 = [UIView new];
     self.view1.backgroundColor = [UIColor whiteColor];
-    self.view1.layer.cornerRadius = 10;
-    self.view1.layer.shadowOffset = CGSizeMake(1, 1);
-    self.view1.layer.shadowColor = kShadowColor;
-    self.view1.layer.shadowOpacity = 1;
-    self.view1.layer.shadowRadius = 3;
+    [Manager shadowView:self.view1 color: RGBA(153, 153, 153, 0.3)];
     [self.view addSubview:self.view1];
     
     self.view2 = [UIView new];

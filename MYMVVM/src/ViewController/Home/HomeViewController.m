@@ -67,7 +67,6 @@
 - (void)addBind {
     WEAKSELF;
     [RACObserve(_homeViewModel, dataSourceArr) subscribeNext:^(id x) {
-        NSLog(@"xxxx ---> %@",x);
         [weakSelf.tableView reloadData];
     }];
    

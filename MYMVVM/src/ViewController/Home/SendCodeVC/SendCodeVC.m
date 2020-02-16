@@ -50,7 +50,7 @@
 -(void)addAction{
     WEAKSELF;
     [self.sendCodeBtn addActionHandler:^(NSInteger tag) {
-        [weakSelf sendCodeShow];
+        [Manager sendCodeShowBtn:weakSelf.sendCodeBtn];
     }];
     
 }

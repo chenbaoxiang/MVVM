@@ -80,7 +80,6 @@
 - (void)addBind {
     WEAKSELF;
     [RACObserve(self.userViewModel, dataSourceArr) subscribeNext:^(id x) {
-        NSLog(@"xxxx ---> %@",x);
         [weakSelf.topImageView sd_setImageWithURL:[NSURL URLWithString:x[0][@"showImage"]] placeholderImage:nil];
         [weakSelf.tableView reloadData];
     }];
