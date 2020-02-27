@@ -14,6 +14,7 @@
 #import "ShowImageVC.h"         // 点击图片放大
 #import "ShadowVC.h"            // 圆角阴影
 #import "SendCodeVC.h"          // 验证码倒计时
+#import "ChooseVC.h"            // 选择器
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)HomeViewModel *homeViewModel;
 @property(nonatomic,strong)UITableView *tableView;
@@ -139,7 +140,11 @@
         SendCodeVC *VC = [SendCodeVC new];
         VC.navigationItem.title = @"验证码倒计时";
         [self.navigationController pushViewController:VC animated:YES];
-    }
+    } else if ([@"选择器(时间,地址)" isEqualToString:title]){
+           ChooseVC *VC = [ChooseVC new];
+           VC.navigationItem.title = @"选择器(时间,地址)";
+           [self.navigationController pushViewController:VC animated:YES];
+       }
     
         
     

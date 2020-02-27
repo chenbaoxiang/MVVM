@@ -13,5 +13,6 @@ target 'MYMVVM' do
     pod 'MJExtension'
     pod 'CYLTabBarController', '~> 1.24.0'
     pod 'ReactiveCocoa', :git => 'https://github.com/zhao0/ReactiveCocoa.git', :tag => '2.5.2' 
+    pod 'MOFSPickerManager'
 end
 

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3E61D7498A2212FF89A481BE /* Pods_MYMVVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7185EF2280F3B32393B7AEA /* Pods_MYMVVM.framework */; };
+		6016A6952407EC2A0067D136 /* ChooseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6016A6942407EC2A0067D136 /* ChooseVC.m */; };
 		6030D3E723BDBA1600225F37 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6030D3E623BDBA1600225F37 /* AppDelegate.m */; };
 		6030D3ED23BDBA1700225F37 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6030D3EC23BDBA1700225F37 /* ViewController.m */; };
 		6030D3F023BDBA1700225F37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6030D3EE23BDBA1700225F37 /* Main.storyboard */; };
@@ -142,6 +143,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6016A6932407EC2A0067D136 /* ChooseVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChooseVC.h; sourceTree = "<group>"; };
+		6016A6942407EC2A0067D136 /* ChooseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseVC.m; sourceTree = "<group>"; };
 		6030D3E223BDBA1600225F37 /* MYMVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MYMVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6030D3E523BDBA1600225F37 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6030D3E623BDBA1600225F37 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -387,6 +390,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6016A6922407EC150067D136 /* ChooseVC */ = {
+			isa = PBXGroup;
+			children = (
+				6016A6932407EC2A0067D136 /* ChooseVC.h */,
+				6016A6942407EC2A0067D136 /* ChooseVC.m */,
+			);
+			path = ChooseVC;
+			sourceTree = "<group>";
+		};
 		6030D3D923BDBA1600225F37 = {
 			isa = PBXGroup;
 			children = (
@@ -488,6 +500,7 @@
 		6030D41E23BDC1A000225F37 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				6016A6922407EC150067D136 /* ChooseVC */,
 				606AA24B23C332F0003D59EC /* HomeDetailVC */,
 				606AA24723C31ABC003D59EC /* SendCodeVC */,
 				606AA24323C30990003D59EC /* ShadowVC */,
@@ -1261,6 +1274,7 @@
 				606AA16C23C2C72C003D59EC /* UserTableViewCell.m in Sources */,
 				606AA22B23C2FCFC003D59EC /* LGPhotoPickerImageView.m in Sources */,
 				6030D43D23BDC36500225F37 /* UserModel.m in Sources */,
+				6016A6952407EC2A0067D136 /* ChooseVC.m in Sources */,
 				606AA17F23C2E1B4003D59EC /* SDCollectionViewCell.m in Sources */,
 				606AA23223C2FCFC003D59EC /* UIImage+MultiFormat.m in Sources */,
 				606AA21E23C2FCFC003D59EC /* ZLCamera.m in Sources */,
