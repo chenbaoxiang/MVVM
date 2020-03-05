@@ -47,6 +47,8 @@ NS_ASSUME_NONNULL_BEGIN
 +(void)shadowView:(UIView*)view color:(UIColor *)color;
 #pragma mark --- 获取验证码
 +(void)sendCodeShowBtn:(UIButton *)btn;
+#pragma mark --- 两时间戳之间时间差
++(NSString *)getTheCountOfTwoDaysWithBeginDate:(double)begin endDate:(double )end;
 @end
 
 NS_ASSUME_NONNULL_END

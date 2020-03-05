@@ -326,4 +326,45 @@ static Manager *manager = nil;
     dispatch_resume(_timer);
 }
 
++(NSString *)getTheCountOfTwoDaysWithBeginDate:(double)begin endDate:(double )end{
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+    NSDate *date1 = [NSDate dateWithTimeIntervalSince1970:begin];
+    NSDate *date2 = [NSDate dateWithTimeIntervalSince1970:end];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSCalendarUnit type = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
+    // 4.利用日历对象比较两个时间的差值
+    NSDateComponents *cmps = [calendar components:type fromDate:date1 toDate:date2 options:0];
+    // 5.输出结果
+    NSLog(@"两个时间相差%ld年%ld月%ld日%ld小时%ld分钟%ld秒", cmps.year, cmps.month, cmps.day, cmps.hour, cmps.minute, cmps.second);
+    NSString *resultStr = @"";
+    if (cmps.year >0) {
+        resultStr = [NSString stringWithFormat:@"%ld年%ld月%ld天%ld时%ld分%ld秒", cmps.year, cmps.month, cmps.day, cmps.hour, cmps.minute, cmps.second];
+    }else{
+        if (cmps.month > 0 ) {
+            resultStr = [NSString stringWithFormat:@"%ld月%ld天%ld时%ld分%ld秒", cmps.month, cmps.day, cmps.hour, cmps.minute, cmps.second];
+        }else{
+            if (cmps.day > 0) {
+                resultStr = [NSString stringWithFormat:@"%ld天%ld时%ld分%ld秒",  cmps.day, cmps.hour, cmps.minute, cmps.second];
+            }else{
+                if (cmps.hour > 0) {
+                    resultStr = [NSString stringWithFormat:@"%ld时%ld分%ld秒", cmps.hour, cmps.minute, cmps.second];
+                }else{
+                    if (cmps.minute > 0) {
+                        resultStr = [NSString stringWithFormat:@"%ld分%ld秒", cmps.minute, cmps.second];
+                    }else{
+                        if (cmps.second > 0) {
+                            resultStr = [NSString stringWithFormat:@"%ld秒", cmps.second];
+                        }else{
+                            resultStr = @"0秒";
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    return resultStr;
+}
 @end

@@ -136,9 +136,9 @@
         VC.navigationItem.title = @"圆角阴影";
         [self.navigationController pushViewController:VC animated:YES];
     }
-    else if ([@"验证码倒计时" isEqualToString:title]){
+    else if ([@"倒计时(验证码,时分秒)" isEqualToString:title]){
         SendCodeVC *VC = [SendCodeVC new];
-        VC.navigationItem.title = @"验证码倒计时";
+        VC.navigationItem.title = @"倒计时";
         [self.navigationController pushViewController:VC animated:YES];
     } else if ([@"选择器(时间,地址)" isEqualToString:title]){
            ChooseVC *VC = [ChooseVC new];
